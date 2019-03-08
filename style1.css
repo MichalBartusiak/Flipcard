@@ -1,0 +1,39 @@
+.flipcard {
+    width: 360px;
+    height: 450px;
+    border-radius: 10px;
+    background-color: transparent;
+    position: relative;
+    perspective: 1000px;
+
+}
+
+.flipcard::before,
+.flipcard::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 3px solid black;
+    transition: .6s transform ease;
+    backface-visibility: hidden;
+}
+
+.flipcard::after {
+    background-color: royalblue;
+}
+
+.flipcard:hover::after {
+    transform: rotateY(180deg);
+}
+
+.flipcard::before {
+    background-color: yellow;
+    transform: rotateY(180deg);
+}
+
+.flipcard:hover::before {
+    transform: rotateY(360deg);
+}
